@@ -1,0 +1,151 @@
+1. What is a pyproject.toml file?
+
+TOML (Tom’s Obvious, Minimal Language): It’s a simple configuration file format (like JSON or YAML) but is easier to read and write. 
+TOML is becoming the standard for Python packaging metadata.
+
+2. Why pyproject.toml is important:
+
+> It was introduced with PEP 518 to modernize Python package building. Previously, everything was done using setup.py 
+  but now pyproject.toml allows for more flexibility, better dependency management, and cleaner project configuration.
+> It centralizes metadata about the project: project name, version, dependencies, authors, etc.
+> It supports various build systems (like setuptools, poetry, etc.).
+
+3. Explaining sections of pyproject.toml
+
+[project]: Defines the basic project information (name, version, description, authors).
+[tool.setuptools]: Specifies that setuptools is being used to build the project.
+[tool.setuptools.dynamic]: Links the external files (like requirements.txt) to dynamically pull dependencies.
+
+4. setup.py with the advent of pyproject.toml: Some tasks previously handled by setup.py (like metadata) are now managed 
+   by pyproject.toml. However, setup.py can still be used, especially if you have complex build steps.
+
+5. How do setup.py, pyproject.toml, and requirements.txt work together?
+
+> pyproject.toml: It’s now the central place for project metadata. Instead of defining your dependencies and project 
+  information in setup.py, you can define them in pyproject.toml.
+  As we did in your project, the line [tool.setuptools.dynamic] dependencies = {file = "requirements.txt"} links your requirements.txt 
+  file to the TOML file, so when the project is built, the dependencies are fetched from requirements.txt.
+
+> setup.py: While it’s still used for custom builds and configurations, most of the basic functionality (like metadata and dependencies) 
+  is being transferred to pyproject.toml. You might still keep a minimal setup.py if you have custom build steps, but for many projects, 
+  it’s not necessary anymore with pyproject.toml.
+
+> requirements.txt: It lists all project dependencies and their versions.
+
+When you run pip install -r requirements.txt, it ensures that all dependencies are installed. The pyproject.toml file can reference 
+it (as we did) so that package dependencies are automatically pulled from there.
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+Cross-Origin Resource Sharing (CORS)
+
+Original: Allow all origins for Cross-Origin Resource Sharing (CORS) Configure middleware to handle CORS, allowing requests 
+from any origin.
+
+Simplified: When you load a web app (e.g., from http://localhost:3000) and it tries to access a server (e.g., http://localhost:8000), 
+CORS controls whether the browser allows this connection. By default, browsers block requests from one 
+"origin" (like a domain or port) to another for security reasons.
+
+In this code, allow_origins=["*"] is set, which means allow all origins (any domain or app can connect). The middleware 
+is added so that your FastAPI app accepts requests from any origin, making it easier for you to access the API from anywhere, 
+such as different frontend apps.
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+**Original:** > async
+
+Simplified: `async` (short for *asynchronous*) allows your code to run tasks without waiting for each to finish one by one. 
+
+For example, imagine you request some data from a user form on a website. While waiting for the data to be sent back, instead 
+of sitting idle, the app can do other tasks (like handling another user's request) in the meantime.
+
+Using `async` helps the app handle multiple requests faster and more efficiently, especially for tasks like reading form data, 
+accessing databases, or making network requests. 
+
+In our code:
+----------------------------------
+async def get_vehicle_data(self):
+    form = await self.request.form()
+    # fetch form data here
+----------------------------------
+
+This means `get_vehicle_data` won’t block the app. The `await` keyword tells Python to pause this function temporarily while it waits 
+for data but allows the app to keep working on other tasks.
+
+In short:
+- **`async`** lets the function run without waiting.
+- **`await`** pauses the function only when necessary, allowing other parts of the app to keep running smoothly.
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+It seems that the self-hosted runner stopped because it's designed to run in the foreground of the terminal when executed with `./run.sh`. This means that if you closed the terminal session or the EC2 instance restarted, the runner would have stopped. To ensure it runs persistently in the background and starts automatically, you should set it up as a service.
+
+Here’s how to do that on your EC2 instance:
+
+### 1. Navigate to the Runner Directory
+
+First, make sure you’re in the `actions-runner` directory on your EC2 instance:
+
+```bash
+cd ~/actions-runner
+```
+
+### 2. Set Up the Runner as a Service
+
+To run the self-hosted GitHub runner as a background service, GitHub provides a built-in script to install it as a service.
+
+Run the following command in the `actions-runner` directory:
+
+```bash
+sudo ./svc.sh install
+```
+
+This command will install the runner as a service, making it easier to start, stop, or restart it.
+
+### 3. Start the Service
+
+After installing the service, start it using the following command:
+
+```bash
+sudo ./svc.sh start
+```
+
+### 4. Check the Status
+
+You can check the status of the runner service to ensure it’s running:
+
+```bash
+sudo ./svc.sh status
+```
+
+### 5. Enable the Service to Start on Boot (Optional)
+
+To ensure that the runner service starts automatically when the EC2 instance reboots, you can use the following command:
+
+```bash
+sudo systemctl enable actions.runner.<your-runner-name>.service
+```
+
+### Additional Notes
+
+- **Replace `<your-runner-name>`**: When checking the status or enabling the service, replace `<your-runner-name>` with the specific name of your runner service. You can find the name of the service by running `systemctl list-units | grep actions.runner`.
+
+- **Re-register the Runner**: If you’re still experiencing issues, there may have been an issue during setup. You might need to re-register the runner. To do this, stop the service, remove the runner, and start the configuration process again with a new registration token from your GitHub repository's settings.
+
+### Example Commands
+
+```bash
+# Stop and remove the service (if needed)
+sudo ./svc.sh stop
+sudo ./svc.sh uninstall
+
+# Re-configure the runner
+./config.sh --url https://github.com/vikashishere/MLOps-Test-Proj --token <NEW_TOKEN>
+
+# Re-install and start the service
+sudo ./svc.sh install
+sudo ./svc.sh start
+```
+
+After following these steps, the runner should be persistently running as a background service on your EC2 instance and ready to accept jobs.
