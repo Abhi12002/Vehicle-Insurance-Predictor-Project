@@ -1,7 +1,3 @@
-Awesome! Thanks for the detailed project flow. Based on everything you've shared, here’s a **clean, professional, and visually appealing `README.md`** for your GitHub repository. This version uses markdown best practices, section formatting, and emoji icons for a nice touch:
-
----
-
 ```markdown
 # 🚗 Vehicle Data ML Project
 
