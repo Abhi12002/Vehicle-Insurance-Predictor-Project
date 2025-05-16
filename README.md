@@ -109,9 +109,9 @@ This project follows a standard ML workflow:
 - **CI/CD & MLOps:** Git, GitHub Actions, MLflow
 
 ---
-
+<pre>
 ## 📚 Project Structure
-
+  
 vehicle_insurance_predictor/
 ├── src/ # Core modules (data, model, pipeline)
 │ ├── data_ingestion.py
@@ -122,27 +122,29 @@ vehicle_insurance_predictor/
 │ ├── predict.py
 │ └── init.py
 ├── app.py # Flask web app
-├── requirements.txt # Dependencies
+├── requirements.txt # Python dependencies
 ├── Dockerfile # Containerization
 ├── notebook/ # EDA & experiments
 │ └── EDA.ipynb
-├── static/ # Web assets
+├── static/ # Static web assets
 ├── templates/ # HTML templates
 ├── tests/ # Unit tests
-├── screenshots/ # UI screenshots
-│ ├── input.png
-│ └── predict.png
-└── README.md
+├── input.png # Input UI screenshot
+├── predict.png # Prediction UI screenshot
+└── README.md # Project documentation
+ </pre>
 
-text
+
 **Folder Descriptions:**
-- `src/`: Modular code for each pipeline step (ingestion, validation, transformation, training, evaluation, prediction)
-- `app.py`: Main web interface and REST API
-- `notebook/`: Exploratory data analysis and prototyping
-- `tests/`: Automated tests for reliability
-
----
-
+- `src/`: Modular code for data pipelines (ingestion, validation, transformation, training, evaluation, prediction)
+- `app.py`: Flask application entry point (API + UI)
+- `notebook/`: Jupyter notebooks for EDA and prototyping
+- `tests/`: Unit tests for core pipeline components
+- `static/`, `templates/`: Web frontend assets for Flask
+- `input.png`, `predict.png`: UI screenshots used in documentation
+- `Dockerfile`, `requirements.txt`: Environment setup for containerized deployment
+- `README.md`: Main project documentation
+  
 ## 🚀 Quickstart
 
 1. Clone the repository
