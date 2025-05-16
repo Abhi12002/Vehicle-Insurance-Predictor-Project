@@ -19,18 +19,19 @@
 - [Tech Stack](#tech-stack)
 - [Project Structure](#project-structure)
 - [Quickstart](#quickstart)
-- [MongoDB Atlas Setup](#mongodb-atlas-setup)
-- [Data & EDA](#data--eda)
-- [Model Training & Evaluation](#model-training--evaluation)
+- [mongodb-atlas-setup](#mongodb-atlas-setup)
+- [Data and EDA](#data-and-eda)
+- [Model Training and Evaluation](#model-training-and-evaluation)
 - [ML Pipeline Modules](#ml-pipeline-modules)
 - [Deployment Workflow](#deployment-workflow)
 - [Security](#security)
-- [Testing & Maintenance](#testing--maintenance)
+- [Testing and Maintenance](#testing-and-maintenance)
 - [Model Card](#model-card)
 - [Future Work](#future-work)
-- [Contributions & Credits](#contributions--credits)
+- [Contributions and Credits](#contributions-and-credits)
 - [License](#license)
 - [Contact](#contact)
+
 
 ---
 
