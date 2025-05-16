@@ -199,7 +199,7 @@ text
 
 ---
 
-<a name="data-eda"></a>  
+<a name="data-and-eda"></a>  
 ## 📊 Data & EDA
 
 - Dataset: 25,000+ records with features like age, gender, vehicle damage history, policy sales channel, etc.
@@ -209,7 +209,7 @@ text
 
 ---
 
-<a name="model-training-evaluation"></a>
+<a name="model-training-and-evaluation"></a>
 ## 🤖 Model Training & Evaluation
 
 - Models: Logistic Regression, Random Forest, XGBoost
@@ -253,7 +253,7 @@ text
 
 ---
 
-<a name="testing-maintenance"></a>  
+<a name="testing-and-maintenance"></a>  
 ## 🧪 Testing & Maintenance
 
 - Unit tests for data ingestion, transformation, and prediction modules (`tests/` directory)
@@ -299,7 +299,7 @@ Predict insurance purchase intent for lead prioritization by insurers.
 
 ---
 
-<a name="contributions-credits"></a> 
+<a name="contributions-and-credits"></a> 
 ## 🤝 Contributions & Credits
 
 This project was developed by **Abhinav Mishra** as a solo effort, leveraging:
