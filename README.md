@@ -8,6 +8,7 @@
 
 ---
 
+<a name="table-of-contents"></a>  
 ## 📑 Table of Contents
 
 - [Project Overview](#project-overview)
@@ -46,6 +47,8 @@ Achieved ~87% accuracy with XGBoost on 25,000+ customer records.
 
 ---
 
+
+<a name="demo"></a> 
 ## 🖼️ Demo
 
 | Filling Details | Prediction Output |
@@ -54,6 +57,7 @@ Achieved ~87% accuracy with XGBoost on 25,000+ customer records.
 
 ---
 
+<a name="key-features"></a> 
 ## 🔹 Key Features
 
 - End-to-end ML pipeline: data ingestion, preprocessing, model training, evaluation, and deployment
@@ -67,6 +71,8 @@ Achieved ~87% accuracy with XGBoost on 25,000+ customer records.
 
 ---
 
+
+<a name="business-use-case"></a> 
 ## 🧬 Business Use Case
 
 By predicting whether a customer is likely to purchase insurance, insurers can:
@@ -76,6 +82,7 @@ By predicting whether a customer is likely to purchase insurance, insurers can:
 
 ---
 
+<a name="project-architecture"></a> 
 ## 🏗️ Project Architecture
 
 This project follows a standard ML workflow:
@@ -91,6 +98,7 @@ This project follows a standard ML workflow:
 
 ---
 
+<a name="model-results"></a> 
 ## 📊 Model Results
 
 | Model               | Accuracy  | Precision | Recall    | F1 Score  | ROC-AUC |
@@ -101,6 +109,7 @@ This project follows a standard ML workflow:
 
 ---
 
+<a name="tech-stack"></a> 
 ## 🛠️ Tech Stack
 
 - **Languages & Frameworks:** Python, Flask, HTML, CSS, Bootstrap
@@ -110,6 +119,7 @@ This project follows a standard ML workflow:
 - **CI/CD & MLOps:** Git, GitHub Actions, MLflow
 
 ---
+<a name="project-structure"></a>  
 <pre>
 ## 📚 Project Structure
   
@@ -145,7 +155,8 @@ vehicle_insurance_predictor/
 - `input.png`, `predict.png`: UI screenshots used in documentation
 - `Dockerfile`, `requirements.txt`: Environment setup for containerized deployment
 - `README.md`: Main project documentation
-  
+
+<a name="quickstart"></a> 
 ## 🚀 Quickstart
 
 1. Clone the repository
@@ -177,6 +188,7 @@ text
 
 ---
 
+<a name="mongodb-atlas-setup"></a> 
 ## 📂 MongoDB Atlas Setup
 
 1. Create a free cluster at [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
@@ -187,6 +199,7 @@ text
 
 ---
 
+<a name="data-eda"></a>  
 ## 📊 Data & EDA
 
 - Dataset: 25,000+ records with features like age, gender, vehicle damage history, policy sales channel, etc.
@@ -196,6 +209,7 @@ text
 
 ---
 
+<a name="model-training-evaluation"></a>
 ## 🤖 Model Training & Evaluation
 
 - Models: Logistic Regression, Random Forest, XGBoost
@@ -206,6 +220,7 @@ text
 
 ---
 
+<a name="ml-pipeline-modules"></a>  
 ## ⚖️ ML Pipeline Modules
 
 - `data_ingestion.py`: Fetch and preprocess data from MongoDB
@@ -218,6 +233,7 @@ text
 
 ---
 
+<a name="deployment-workflow"></a>  
 ## ✨ Deployment Workflow
 
 - **Dockerized app:** `Dockerfile`, `.dockerignore`
@@ -228,6 +244,7 @@ text
 
 ---
 
+<a name="security"></a>  
 ## 🚨 Security
 
 - HTTPS access through AWS security group configuration
@@ -236,6 +253,7 @@ text
 
 ---
 
+<a name="testing-maintenance"></a>  
 ## 🧪 Testing & Maintenance
 
 - Unit tests for data ingestion, transformation, and prediction modules (`tests/` directory)
@@ -248,6 +266,7 @@ text
 
 ---
 
+<a name="model-card"></a> 
 ## 📝 Model Card
 
 **Intended Use:**  
@@ -269,6 +288,7 @@ Predict insurance purchase intent for lead prioritization by insurers.
 
 ---
 
+<a name="future-work"></a>
 ## 🛣️ Future Work
 
 - Add automated hyperparameter optimization (Optuna, Ray Tune)
@@ -279,6 +299,7 @@ Predict insurance purchase intent for lead prioritization by insurers.
 
 ---
 
+<a name="contributions-credits"></a> 
 ## 🤝 Contributions & Credits
 
 This project was developed by **Abhinav Mishra** as a solo effort, leveraging:
@@ -287,12 +308,14 @@ This project was developed by **Abhinav Mishra** as a solo effort, leveraging:
 
 ---
 
+<a name="license"></a>  
 ## 📐 License
 
 MIT License
 
 ---
 
+<a name="contact"></a> 
 ## 📬 Contact
 
 **Abhinav Mishra**  
